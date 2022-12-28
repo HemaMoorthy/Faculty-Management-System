@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <style>
+      .box{
+        -webkit-box-shadow: 0px 3px 29px 0px rgba(201,242,87,1);
+        -moz-box-shadow: 0px 3px 29px 0px rgba(201,242,87,1);
+        box-shadow: 0px 3px 29px 0px rgba(201,242,87,1);
+      }
+      .box1{
+        -webkit-box-shadow: 0px 3px 29px 0px rgba(136,195,240,1);
+        -moz-box-shadow: 0px 3px 29px 0px rgba(136,195,240,1);
+        box-shadow: 0px 3px 29px 0px rgba(136,195,240,1);
+      }
+      .box2{
+        -webkit-box-shadow: 0px 3px 29px 0px rgb(255, 255, 255);
+        -moz-box-shadow: 0px 3px 29px 0px rgb(255, 255, 255);
+        box-shadow: 0px 3px 29px 0px rgb(255, 255, 255);
+      }
+    </style>
+
+    <title>Sign Up</title>
+  </head>
+  <body class="bg-dark text-light">
+
+         
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/"><span style='color:#FF29CD;'>F</span><span style='color:#F629CF;'>a</span><span style='color:#ED2AD1;'>c</span><span style='color:#E42BD3;'>u</span><span style='color:#DC2CD5;'>l</span><span style='color:#D32CD7;'>t</span><span style='color:#CA2DD9;'>y</span> <span style='color:#B92FDD;'>M</span><span style='color:#B02FDF;'>a</span><span style='color:#A830E1;'>n</span><span style='color:#9F31E3;'>a</span><span style='color:#9632E5;'>g</span><span style='color:#8E32E7;'>e</span><span style='color:#8533E9;'>m</span><span style='color:#7C34EB;'>e</span><span style='color:#7435ED;'>n</span><span style='color:#6B35EF;'>t</span> <span style='color:#5A37F3;'>S</span><span style='color:#5138F5;'>y</span><span style='color:#4838F7;'>s</span><span style='color:#4039F9;'>t</span><span style='color:#373AFB;'>e</span><span style='color:#2E3BFD;'>m</span></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              
+            </ul>
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/accounts/login">Login</a>
+              </li>
+              {% comment %} <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/accounts/signup" class="btn btn-outline-success">SignUp</a>
+              </li> {% endcomment %}
+            </ul>
+          </div>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <div class="card bg-dark border-info">
+            <div class="card-body">
+                <form class="text-dark mx-2 my-2" action="/accounts/signup/" method="POST">
+                    {% csrf_token %}
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingInput" name="uname" placeholder="name@example.com" required>
+                        <label for="floatingInput">User Name</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com" required>
+                        <label for="floatingInput">Email address</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="floatingPassword1" name="pass1" placeholder="Password" required>
+                        <label for="floatingPassword1">Password</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="floatingPassword2" name="pass2" placeholder="Confirm Password" required>
+                        <label for="floatingPassword2">Confirm Password</label>
+                    </div>
+                    <center><input type="submit" value="SignUp" class="btn btn-success px-5 py-2"></center>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+      <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
